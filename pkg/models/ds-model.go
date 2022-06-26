@@ -2,7 +2,7 @@ package models
 
 import (
 	"github.com/jinzhu/gorm"
-	"github.com/unreal-kz/sosivio-data-vizualization-service/config"
+	"github.com/unreal-kz/sosivio-data-vizualization-service/pkg/config"
 )
 
 var db *gorm.DB

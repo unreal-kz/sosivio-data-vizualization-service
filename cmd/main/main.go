@@ -6,7 +6,7 @@ import (
 
 	"github.com/gorilla/mux"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
-	"github.com/unreal-kz/sosivio-data-vizualization-service/routes"
+	"github.com/unreal-kz/sosivio-data-vizualization-service/pkg/routes"
 )
 
 func main() {

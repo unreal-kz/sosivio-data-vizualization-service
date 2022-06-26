@@ -2,7 +2,7 @@ package routes
 
 import (
 	"github.com/gorilla/mux"
-	"github.com/unreal-kz/sosivio-data-vizualization-service/controllers"
+	"github.com/unreal-kz/sosivio-data-vizualization-service/pkg/controllers"
 )
 
 var RegisterDataVisualRoutes = func(r *mux.Router) {

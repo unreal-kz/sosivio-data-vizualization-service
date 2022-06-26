@@ -7,8 +7,8 @@ import (
 	"strconv"
 
 	"github.com/gorilla/mux"
-	"github.com/unreal-kz/sosivio-data-vizualization-service/models"
-	"github.com/unreal-kz/sosivio-data-vizualization-service/utils"
+	"github.com/unreal-kz/sosivio-data-vizualization-service/pkg/models"
+	"github.com/unreal-kz/sosivio-data-vizualization-service/pkg/utils"
 )
 
 func GetData(w http.ResponseWriter, r *http.Request) {
