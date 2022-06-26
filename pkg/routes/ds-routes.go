@@ -11,5 +11,5 @@ var RegisterDataVisualRoutes = func(r *mux.Router) {
 	r.HandleFunc("/data/{id}", controllers.GetDataById).Methods("GET")
 
 	// r.HandleFunc("/data/{id}", controllers.UpdateData).Methods("PUT")
-	// r.HandleFunc("/data/{id}", controllers.DeleteData).Methods("DELETE")
+	r.HandleFunc("/data/{id}", controllers.DeleteData).Methods("DELETE")
 }

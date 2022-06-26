@@ -20,12 +20,19 @@ func GetData(w http.ResponseWriter, r *http.Request) {
 }
 
 func CreateData(w http.ResponseWriter, r *http.Request) {
-	createDS := &models.DataVisual{}
-	utils.ParseBody(r, createDS)
-	ds := createDS.CreateData()
-	res, _ := json.Marshal(ds)
-	w.WriteHeader(http.StatusOK)
-	w.Write(res)
+	createDS := []models.DataVisual{}
+	// createDS := &models.DataVisual{}
+	utils.ParseBody(r, &createDS)
+	for _, v := range createDS {
+		ds := v.CreateData()
+		res, _ := json.Marshal(ds)
+		w.WriteHeader(http.StatusOK)
+		w.Write(res)
+	}
+	// ds := createDS.CreateData()
+	// res, _ := json.Marshal(ds)
+	// w.WriteHeader(http.StatusOK)
+	// w.Write(res)
 }
 
 func GetDataById(w http.ResponseWriter, r *http.Request) {
@@ -46,6 +53,17 @@ func GetDataById(w http.ResponseWriter, r *http.Request) {
 
 // }
 
-// func DeleteData(w http.ResponseWriter, r *http.Request) {
+func DeleteData(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	dsID := vars["id"]
+	ID, err := strconv.ParseInt(dsID, 0, 0)
+	if err != nil {
+		fmt.Println("error while parsing")
+	}
+	dsDetails := models.DeleteData(ID)
+	res, _ := json.Marshal(dsDetails)
+	w.Header().Set("Content-Type", "pkglication/json")
+	w.WriteHeader(http.StatusOK)
+	w.Write(res)
 
-// }
+}

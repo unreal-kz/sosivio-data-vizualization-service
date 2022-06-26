@@ -12,4 +12,5 @@ func ParseBody(r *http.Request, x interface{}) {
 			return
 		}
 	}
+	defer r.Body.Close()
 }
