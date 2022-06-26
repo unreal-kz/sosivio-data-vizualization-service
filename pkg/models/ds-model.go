@@ -9,7 +9,7 @@ var db *gorm.DB
 
 type DataVisual struct {
 	gorm.Model
-	WhatHappend string  `gorm:""json:"whathappend"`
+	WhatHappend string  `gorm:""json:"whatHappened"`
 	Occurences  int64   `json:"occurences"`
 	Percentage  float64 `json:"percentage"`
 	Description string  `json:"description"`
