@@ -9,7 +9,6 @@ var db *gorm.DB
 
 type DataVisual struct {
 	gorm.Model
-	Id          int64   `json:"Id"`
 	WhatHappend string  `gorm:""json:"whathappend"`
 	Occurences  int64   `json:"occurences"`
 	Percentage  float64 `json:"percentage"`
