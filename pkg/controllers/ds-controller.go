@@ -21,7 +21,6 @@ func GetData(w http.ResponseWriter, r *http.Request) {
 
 func CreateData(w http.ResponseWriter, r *http.Request) {
 	createDS := []models.DataVisual{}
-	// createDS := &models.DataVisual{}
 	utils.ParseBody(r, &createDS)
 	for _, v := range createDS {
 		ds := v.CreateData()
@@ -29,10 +28,6 @@ func CreateData(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusOK)
 		w.Write(res)
 	}
-	// ds := createDS.CreateData()
-	// res, _ := json.Marshal(ds)
-	// w.WriteHeader(http.StatusOK)
-	// w.Write(res)
 }
 
 func GetDataById(w http.ResponseWriter, r *http.Request) {
